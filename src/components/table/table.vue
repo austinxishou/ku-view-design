@@ -817,7 +817,7 @@
                     objData.children.forEach(item => {
                         if (item._isChecked) selectionRowKeys.push(item._rowKey);
                         if (item.children && item.children.length) {
-                            selectionRowKeys = selectionRowKeys.concat(this.getSelectionChildrenRowKeys(item, selectionRowKeys));
+                            selectionRowKeys = this.getSelectionChildrenRowKeys(item, selectionRowKeys);
                         }
                     });
                 }
@@ -830,7 +830,7 @@
                             selection = selection.concat(item);
                         }
                         if (item.children && item.children.length) {
-                            selection = selection.concat(this.getSelectionChildren(item, selection, selectionRowKeys));
+                            selection = this.getSelectionChildren(item, selection, selectionRowKeys);
                         }
                     });
                 }
